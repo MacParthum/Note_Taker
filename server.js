@@ -46,6 +46,16 @@ app.post("/api/notes", function (req, res) {
 
  app.delete('/api/notes/:id', function (req, res) {
     console.log("Note deleted " + req.params.id);
+
+    // filter notes based on id
+    notes = notes.filter(val => val.id !== req.params.id)
+
+    fs.writeFile("./db/db.json", JSON.stringify(notes),
+        err => {
+            if (err) throw err;
+            res.json(notes)
+        })
+
 //     var deleteNote = req.body
 //     deleteNote.id = uuidv4()
 //     notes.delete(deleteNote)
