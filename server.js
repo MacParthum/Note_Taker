@@ -24,7 +24,6 @@ function saveNotes(res) {
     res.sendStatus(200)
 }
 
-
 // Routes
 // =============================================================
 
@@ -45,6 +44,14 @@ app.post("/api/notes", function (req, res) {
     saveNotes(res)
 });
 
+ app.delete('/api/notes/:id', function (req, res) {
+    console.log("Note deleted " + req.params.id);
+//     var deleteNote = req.body
+//     deleteNote.id = uuidv4()
+//     notes.delete(deleteNote)
+//     saveNotes(res)
+
+  });
 
 // Starts the server to begin listening
 // =============================================================
