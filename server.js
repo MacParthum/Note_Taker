@@ -55,12 +55,6 @@ app.post("/api/notes", function (req, res) {
             if (err) throw err;
             res.json(notes)
         })
-
-//     var deleteNote = req.body
-//     deleteNote.id = uuidv4()
-//     notes.delete(deleteNote)
-//     saveNotes(res)
-
   });
 
 // Starts the server to begin listening
